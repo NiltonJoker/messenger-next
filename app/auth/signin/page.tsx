@@ -10,10 +10,10 @@ async function SignInPage() {
     <div className="grid justify-center items-center">
       <div>
         <Image
-          src={'https://1000logos.net/wp-content/uploads/2021/10/logo-Meta.png'}
+          src={'https://1000logos.net/wp-content/uploads/2020/10/fbmessenger.jpg'}
           alt="Meta Logo"
-          width={500}
-          height={500}
+          width={700}
+          height={700}
           className="rounded-full mx-2 object-cover"
         />
       </div>
