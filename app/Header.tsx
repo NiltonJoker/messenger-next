@@ -1,11 +1,14 @@
+import { Session } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import LogoutButton from "./LogoutButton";
 
-function Header() {
+type Props = {
+  session: Session | null
+}
 
-  const session = true;
+function Header({ session }: Props) {
 
   if(session) return (
     <header className="sticky top-0 z-50 bg-white flex justify-between items-center p-10 shadow-sm">
@@ -15,12 +18,12 @@ function Header() {
           height={10}
           width={50}
           alt="Profile Picture"
-          src={'https://1000logos.net/wp-content/uploads/2021/10/logo-Meta.png'}
+          src={session.user?.image!}
         />
 
         <div>
           <p className="text-blue-400">Logged in as:</p>
-          <p className="font-bold text-lg">Nilton Riega</p>
+          <p className="font-bold text-lg">{session.user?.name}</p>
         </div>
       </div>
 
