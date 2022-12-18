@@ -6,7 +6,7 @@ import { Providers } from "./providers";
 
 async function HomePage() {
   const data = await fetch(
-    `${process.env.VERCEL_URL || "http://localhost:3000"}/api/getMessages`
+    `${process.env.VERCEL_DOMAIN || "https://messenger-next.vercel.app"}/api/getMessages`
   ).then((res) => res.json());
 
   const messages: Message[] = data.messages;
